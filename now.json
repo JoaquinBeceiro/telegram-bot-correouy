@@ -1,0 +1,25 @@
+{
+    "version": 2,
+    "name": "telegram-bot-correouy",
+    "builds": [
+        { "src": "*.js", "use": "@now/node" }
+    ],
+    "routes": [
+      { "src": "/bot(.*)", "dest": "/index.js", "methods": ["POST"] },
+      { "src": "/register(.*)", "dest": "/index.js", "methods": ["GET"] },
+      {
+        "headers": {
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+          "Access-Control-Allow-Headers": "X-Requested-With, Content-Type, Accept"
+        },
+        "src": "/(.*)",
+        "dest": "index.js"
+      }
+    ],
+    "env": {
+      "TELEGRAM_BOT_TOKEN": "@telegram_bot_token",
+      "TELEGRAM_BOT_URL": "@telegram_bot_url",
+      "AHIVA_API": "@ahiva_api"
+    }
+  }
