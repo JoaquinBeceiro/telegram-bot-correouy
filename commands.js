@@ -1,3 +1,6 @@
+const fetch = require("node-fetch");
+const ahivaURL = process.env.AHIVA_API;
+
 exports.commands = [
     {
         command: '/help',

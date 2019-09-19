@@ -1,7 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const rp = require('request-promise');
-const fetch = require("node-fetch");
 const _ = require('lodash');
 
 const app = express();
@@ -13,7 +12,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 const TOKEN = process.env.TELEGRAM_BOT_TOKEN;
 const BOT_URL = process.env.TELEGRAM_BOT_URL;
 const TELEGRAM_API_URL = `https://api.telegram.org/bot${TOKEN}`;
-const ahivaURL = process.env.AHIVA_API;
 const {commands} = require('./commands');
 
 app.post(`/bot${TOKEN}`, async (req, res) => {
